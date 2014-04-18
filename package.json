@@ -1,7 +1,7 @@
 {
     "name": "SPServices",
     "authors": [ "Marc D Anderson"],
-    "version": "2014.01",
+    "version": "2014.02a",
     "dependencies": {},
     "devDependencies": {
         "grunt": "~0.4",

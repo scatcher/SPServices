@@ -1,6 +1,6 @@
 /*
  * SPServices - Work with SharePoint's Web Services using jQuery
- * Version 2014.01
+ * Version 2014.02a
  * @requires jQuery v1.8 or greater - jQuery 1.10.x recommended
  *
  * Copyright (c) 2009-2013 Sympraxis Consulting LLC
@@ -24,7 +24,7 @@
     "use strict";
 
     // Version info
-    var VERSION = "2014.01"; // TODO: Update version
+    var VERSION = "2014.02a";
 
     // String constants
     //   General
@@ -453,12 +453,12 @@
         // Build the URL for the Ajax call based on which operation we're calling
         // If the webURL has been provided, then use it, else use the current site
         var ajaxURL = "_vti_bin/" + WSops[opt.operation][0] + ".asmx";
-        var thisSite = $().SPServices.SPGetCurrentSite();
         if (opt.webURL.charAt(opt.webURL.length - 1) === SLASH) {
             ajaxURL = opt.webURL + ajaxURL;
         } else if (opt.webURL.length > 0) {
             ajaxURL = opt.webURL + SLASH + ajaxURL;
         } else {
+            var thisSite = $().SPServices.SPGetCurrentSite();
             ajaxURL = thisSite + ((thisSite.charAt(thisSite.length - 1) === SLASH) ? ajaxURL : (SLASH + ajaxURL));
         }
 
